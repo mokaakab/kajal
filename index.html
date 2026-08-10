@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="onen.png" type="image/png">
+  <title>سالن زیبایی کژال | Kajal Beauty Salon</title>
+  <meta name="description" content="سالن زیبایی کژال | ارائه خدمات تخصصی کراتین، تاتو، رنگ و لایت، کوتاهی، شینیون، مژه، فیشیال و میکاپ" />
+
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-2: #111118;
+      --card: rgba(255,255,255,0.04);
+      --card-2: rgba(255,255,255,0.06);
+      --text: #f4f4f5;
+      --muted: #b9bcc6;
+      --gold: #d4af37;
+      --gold-2: #f0d98a;
+      --line: rgba(212,175,55,0.22);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --transition: all 0.28s cubic-bezier(.2,.8,.2,1);
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Vazirmatn, IRANSans, Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.05), transparent 22%),
+        linear-gradient(180deg, #09090d 0%, #0a0a0f 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .hero {
+      position: relative;
+      padding: 34px 0 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
+        linear-gradient(180deg, #0c0c12 0%, #09090d 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -100px auto auto -100px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(212,175,55,0.13), transparent 65%);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(240,217,138,0.22), rgba(255,255,255,0.03) 35%, rgba(255,255,255,0.02) 70%);
+      border: 1px solid rgba(212,175,55,0.38);
+      box-shadow:
+        0 0 0 6px rgba(212,175,55,0.04),
+        0 12px 40px rgba(0,0,0,0.38),
+        0 0 40px rgba(212,175,55,0.11);
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: 0.4px;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .brand-text p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      letter-spacing: 0.4px;
+    }
+
+    .top-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid rgba(212,175,55,0.26);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      color: var(--text);
+      padding: 12px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.48);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+    }
+
+    .btn-gold {
+      background: linear-gradient(180deg, var(--gold-2), var(--gold));
+      color: #101010;
+      font-weight: 700;
+      border: none;
+    }
+
+    /* Hero Copy */
+    .intro {
+      padding: 34px 0 18px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .intro-main {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(212,175,55,0.11), transparent 62%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.16);
+      color: var(--gold-2);
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .intro-main h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.5;
+    }
+
+    .intro-main p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 2.1;
+      font-size: 1rem;
+    }
+
+    .stats {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    /* Sections */
+    .section {
+      padding: 22px 0 10px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      color: var(--gold-2);
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 170px;
+      padding: 18px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.07);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.035));
+      transition: var(--transition);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      isolation: isolate;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 25%, rgba(0,0,0,0.68) 100%),
+        var(--bgimg);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.8) contrast(1.05);
+      z-index: -2;
+      transform: scale(1.02);
+      transition: transform 0.45s ease;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.42));
+      z-index: -1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,0.28);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.08);
+    }
+
+    .service-tag {
+      align-self: flex-start;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.14);
+      color: #fff4c7;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+      border: 1px solid rgba(212,175,55,0.2);
+      backdrop-filter: blur(6px);
+    }
+
+    .service-card h4 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .service-card p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* About & Contact */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .info-box {
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    .info-box h4 {
+      margin: 0 0 10px;
+      color: var(--gold-2);
+      font-size: 1.2rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 2.1;
+      font-size: 0.98rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-item .icon {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid rgba(212,175,55,0.18);
+      color: var(--gold-2);
+      font-size: 1rem;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.93rem;
+    }
+
+    /* Gallery View */
+    #gallery-view {
+      display: none;
+      padding: 26px 0 20px;
+    }
+
+    .gallery-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .gallery-title {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--gold-2);
+    }
+
+    .gallery-sub {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    .back-btn {
+      border: 1px solid rgba(212,175,55,0.24);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.46);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      min-height: 240px;
+      background: #15151d;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .photo:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.05) contrast(1.08);
+    }
+
+    .photo::after {
+      content: attr(data-caption);
+      position: absolute;
+      inset: auto 0 0;
+      padding: 12px 14px;
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: #fff;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.72));
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 28px;
+      padding: 22px 0 34px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      text-align: center;
+      line-height: 2;
+      font-size: 0.92rem;
+    }
+
+    .footer strong {
+      color: var(--gold-2);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .intro-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 20px));
+      }
+
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        gap: 14px;
+      }
+
+      .logo-wrap {
+        width: 92px;
+        height: 92px;
+      }
+
+      .intro-main,
+      .info-box {
+        padding: 18px;
+      }
+
+      .service-card {
+        min-height: 160px;
+      }
+
+      .photo {
+        min-height: 220px;
+      }
+    }
+
+    /* Subtle animation */
+    .fade-up {
+      animation: fadeUp 0.55s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="brand fade-up">
+        <div class="logo-wrap" aria-label="لوگوی سالن زیبایی کژال">
+          <!-- لوگوی SVG حرفه‌ای و لوکس -->
+          <img src="onen.png" alt="لوگوی سالن کژال" style="width: 95%; height: 95%; object-fit: contain; ">
+        </div>
+
+        <div class="brand-text">
+          <h1>سالن زیبایی کژال</h1>
+          <p>Beauty • Elegance • Professional Care</p>
+        </div>
+      </div>
+
+      <div class="top-actions fade-up" style="animation-delay:.08s">
+        <button class="btn btn-gold" onclick="scrollToSection('services-section')">مشاهده لاین‌ها</button>
+        <button class="btn" onclick="scrollToSection('about-section')">درباره ما</button>
+        <button class="btn" onclick="scrollToSection('contact-section')">تماس با ما</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Home View -->
+    <section id="home-view">
+      <section class="intro">
+        <div class="intro-grid">
+          <div class="panel intro-main fade-up" style="animation-delay:.1s">
+            <div class="badge">✨ سالن لوکس، خدمات تخصصی، تجربه متفاوت</div>
+            <h2>جایی که زیبایی، ظرافت و تخصص در کنار هم معنا پیدا می‌کنند.</h2>
+            <p>
+              سالن زیبایی کژال با فضایی شیک، محیطی آرام و تیمی حرفه‌ای، خدمات متنوعی در حوزه زیبایی ارائه می‌دهد.
+              از کراتین و پروتئینه تا میکاپ و فیشیال، هر لاین با دقت، ظرافت و استانداردهای بالا اجرا می‌شود.
+            </p>
+          </div>
+
+          <div class="panel stats fade-up" style="animation-delay:.14s">
+            <div class="stat">
+              <strong>8 لاین تخصصی</strong>
+              <span>تمام خدمات اصلی سالن در یک ساختار حرفه‌ای و قابل مشاهده.</span>
+            </div>
+            <div class="stat">
+              <strong>گالری اختصاصی</strong>
+              <span>با کلیک روی هر بخش، وارد صفحه گالری تصاویر همان لاین می‌شوید.</span>
+            </div>
+            <div class="stat">
+              <strong>طراحی لوکس</strong>
+              <span> فضایی شیک و خاص با حس مدرن. </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services-section">
+        <div class="section-title">
+          <h3>لاین‌های خدمات</h3>
+          <p>روی هر بخش کلیک کن تا وارد گالری تصاویر همان لاین شوی.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-keratin/800/1000');" onclick="openGallery('keratin')">
+            <div class="service-tag">Hair Care</div>
+            <h4>کراتین و پروتئینه</h4>
+            <p>احیا، صافی، درخشش و بازسازی عمیق مو</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-tattoo/800/1000');" onclick="openGallery('tatoo')">
+            <div class="service-tag">Brows & Tattoo</div>
+            <h4>لاین تاتو</h4>
+            <p>قرینه‌سازی، طراحی و اجرای تخصصی</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-color/800/1000');" onclick="openGallery('color')">
+            <div class="service-tag">Color Lab</div>
+            <h4>لاین رنگ و لایت</h4>
+            <p>رنگ‌های خاص، هایلایت و تکنیک‌های مدرن</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-cut/800/1000');" onclick="openGallery('cut')">
+            <div class="service-tag">Hair Cut</div>
+            <h4>لاین کوتاهی مو</h4>
+            <p>کوتاهی ژورنالی و فرم‌دهی حرفه‌ای</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-shinion/800/1000');" onclick="openGallery('shinion')">
+            <div class="service-tag">Bridal Style</div>
+            <h4>لاین شینیون</h4>
+            <p>شینیون کلاسیک، مدرن و مجلسی</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-lashes/800/1000');" onclick="openGallery('lashes')">
+            <div class="service-tag">Lash Line</div>
+            <h4>لاین مژه</h4>
+            <p>اکستنشن، لیفت و طراحی حرفه‌ای مژه</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-facial/800/1000');" onclick="openGallery('facial')">
+            <div class="service-tag">Skin Care</div>
+            <h4>لاین فیشیال</h4>
+            <p>پاکسازی، آبرسانی و مراقبت پوستی</p>
+          </div>
+
+          <div class="service-card" style="--bgimg:url('https://picsum.photos/seed/kajal-makeup/800/1000');" onclick="openGallery('makeup')">
+            <div class="service-tag">Makeup Art</div>
+            <h4>لاین میکاپ</h4>
+            <p>میکاپ لایت، مجلسی و عروس</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about-section">
+        <div class="section-title">
+          <h3>درباره سالن کژال</h3>
+          <p>متنی آماده برای معرفی حرفه‌ای برند سالن</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="panel info-box fade-up" style="animation-delay:.08s">
+            <h4>معرفی مجموعه</h4>
+            <p>
+              سالن زیبایی کژال با تمرکز بر کیفیت، دقت و زیبایی‌شناسی مدرن، فضایی لوکس و آرام برای ارائه خدمات تخصصی ایجاد کرده است.
+              در کژال، هر خدمت با توجه به نیاز و سلیقه‌ی مراجعه‌کننده طراحی می‌شود تا نتیجه‌ای حرفه‌ای، ماندگار و چشم‌نواز به دست آید.
+              استفاده از متریال باکیفیت، اجرای تمیز و توجه به جزئیات، امضای کار ماست.
+            </p>
+          </div>
+
+          <div class="panel info-box fade-up" style="animation-delay:.12s">
+            <h4>چرا کژال؟</h4>
+            <p>
+              چون زیبایی فقط یک خدمت نیست، یک تجربه است.  
+              ما تلاش می‌کنیم با پرسنل حرفه‌ای، محیط شیک، نظم بالا و استانداردهای دقیق، تجربه‌ای متمایز و لوکس برای شما بسازیم.
+            </p>
+
+            <div class="contact-list" style="margin-top:16px;">
+              <div class="contact-item">
+                <div class="icon">★</div>
+                <div>
+                  <strong>کیفیت بالا</strong>
+                  <span>استفاده از محصولات و تکنیک‌های استاندارد و حرفه‌ای</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">✦</div>
+                <div>
+                  <strong>فضای شیک</strong>
+                  <span>طراحی لوکس با حس premium و مینیمال</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact-section">
+        <div class="section-title">
+          <h3>تماس با ما</h3>
+          <p>اطلاعات تماس را می‌توانی با اطلاعات واقعی خودت جایگزین کنی</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="panel info-box fade-up" style="animation-delay:.08s">
+            <h4>اطلاعات سالن</h4>
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">📍</div>
+                <div>
+                  <strong>آدرس</strong>
+                  <span>تهران، [محله / خیابان اصلی]، [پلاک / واحد]</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">📞</div>
+                <div>
+                  <strong>تلفن</strong>
+                  <span>۰۲۱ - 0000 0000</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">📱</div>
+                <div>
+                  <strong>اینستاگرام</strong>
+                  <span>@kajal.beauty.salon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel info-box fade-up" style="animation-delay:.12s">
+            <h4>ساعات کاری</h4>
+            <p>
+              شنبه تا پنجشنبه: ۱۰ صبح تا ۸ شب<br />
+              جمعه: فقط با هماهنگی قبلی
+            </p>
+
+            <div style="margin-top:18px; padding:16px; border-radius:16px; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.15);">
+              <p style="margin:0; color:#fff; line-height:2;">
+                برای رزرو نوبت می‌توانی بعداً فرم آنلاین، واتساپ یا تماس مستقیم اضافه کنی.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Gallery View -->
+    <section id="gallery-view">
+      <div class="gallery-head">
+        <div>
+          <h2 class="gallery-title" id="gallery-title">گالری</h2>
+          <p class="gallery-sub" id="gallery-sub">نمونه تصاویر تخصصی این لاین در این بخش نمایش داده می‌شود.</p>
+        </div>
+        <button class="back-btn" onclick="closeGallery()">← بازگشت به صفحه اصلی</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <footer class="footer">
+      <strong>سالن زیبایی کژال</strong><br />
+      طراحی شده به صورت یک فایل HTML مستقل، شیک و حرفه‌ای
+    </footer>
+  </main>
+
+  <script>
+    const serviceData = {
+      keratin: {
+        title: "کراتین و پروتئینه",
+        sub: "نمونه کارهای احیا، صافی و بازسازی مو",
+        seed: "kajal-keratin-gallery"
+      },
+      tatoo: {
+        title: "لاین تاتو",
+        sub: "نمونه کارهای تخصصی طراحی و قرینه‌سازی",
+        seed: "kajal-tattoo-gallery"
+      },
+      color: {
+        title: "لاین رنگ و لایت",
+        sub: "نمونه کارهای رنگ، لایت، بالیاژ و تکنیک‌های مدرن",
+        seed: "kajal-color-gallery"
+      },
+      cut: {
+        title: "لاین کوتاهی مو",
+        sub: "نمونه کارهای کوتاهی ژورنالی و فرم‌دهی حرفه‌ای",
+        seed: "kajal-cut-gallery"
+      },
+      shinion: {
+        title: "لاین شینیون",
+        sub: "نمونه کارهای شینیون کلاسیک، مدرن و مجلسی",
+        seed: "kajal-shinion-gallery"
+      },
+      lashes: {
+        title: "لاین مژه",
+        sub: "نمونه کارهای اکستنشن، لیفت و طراحی مژه",
+        seed: "kajal-lashes-gallery"
+      },
+      facial: {
+        title: "لاین فیشیال",
+        sub: "نمونه کارهای پاکسازی پوست، آبرسانی و مراقبت",
+        seed: "kajal-facial-gallery"
+      },
+      makeup: {
+        title: "لاین میکاپ",
+        sub: "نمونه کارهای میکاپ لایت، مجلسی و عروس",
+        seed: "kajal-makeup-gallery"
+      }
+    };
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function openGallery(key) {
+      const item = serviceData[key];
+      if (!item) return;
+
+      document.getElementById("home-view").style.display = "none";
+      document.getElementById("gallery-view").style.display = "block";
+
+      document.getElementById("gallery-title").textContent = item.title;
+      document.getElementById("gallery-sub").textContent = item.sub;
+
+      const grid = document.getElementById("gallery-grid");
+      grid.innerHTML = "";
+
+      // 12 تصویر برای هر لاین
+      for (let i = 1; i <= 12; i++) {
+        const photo = document.createElement("div");
+        photo.className = "photo";
+        photo.setAttribute("data-caption", `${item.title} - نمونه ${i}`);
+
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.src = `https://picsum.photos/seed/${item.seed}-${i}/900/1100`;
+        img.alt = `${item.title} نمونه ${i}`;
+
+        photo.appendChild(img);
+        grid.appendChild(photo);
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function closeGallery() {
+      document.getElementById("gallery-view").style.display = "none";
+      document.getElementById("home-view").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
